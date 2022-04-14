@@ -1,7 +1,7 @@
 <h1 id="about-us" style="position: relative;">About us</h1>
 
-<% if current_user %>
-<div class="user-container" style="position: absolute; right: 10px; top: 50px; padding: 20px">
+<% if current_user  %>
+<div class="user-container" style="float: right;">
   <h3><%= current_user.email %></h3>
 </div>
 <% end %>
