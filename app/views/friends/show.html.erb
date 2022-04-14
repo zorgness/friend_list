@@ -1,0 +1,29 @@
+
+
+
+
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @friend.first_name %>
+    <%= @friend.last_name %>
+  </h1>
+  <p class="lead">
+    <%= @friend.email %>  | 
+    <%= @friend.phone %>  |  
+    <%= @friend.twitter %>
+    
+
+  </p>
+  <br/>
+
+<div style="display:flex; justify-content: space-around; flex-wrap: wrap;">
+
+  <% if current_user.id === @friend.user_id %> 
+  <%= link_to "Edit this friend", edit_friend_path(@friend), class:"btn btn-warning" %>
+  <%= link_to "Back to friends", friends_path, class:"btn btn-primary" %>
+  <%= button_to "Destroy this friend", @friend, method: :delete, class:"btn btn-danger" %>
+  <% else %> 
+  <%= link_to "Back to friends", friends_path, class:"btn btn-primary" %>
+  <% end %>
+</div>
